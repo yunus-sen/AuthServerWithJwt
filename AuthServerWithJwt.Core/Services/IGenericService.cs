@@ -11,10 +11,10 @@ namespace AuthServerWithJwt.Core.Services
     public interface IGenericService<TEntity, TDto> where TEntity : class where TDto : class
     {
         Task<Response<TDto>> GetByIdAsyn(int Id);
-        Task<Response<IQueryable<TDto>>> GetAll();
-        Task<Response<TDto>> Add(TEntity entity);
-        Response<IEnumerable<TDto>> Get(Expression<Func<TEntity, bool>> predicate);
-        Task<Response<NoDataDto>> Remove(TEntity entity);
-        Task<Response<TDto>> Update(TEntity entity);
+        Task<Response<IEnumerable<TDto>>> GetAllAsync();
+        Task<Response<TDto>> AddAsync(TDto entity);
+        Response<IEnumerable<TDto>> Where(Expression<Func<TEntity, bool>> predicate);
+        Task<Response<NoDataDto>> Remove(int id);
+        Task<Response<TDto>> Update(TDto entity, int id);
     }
 }
