@@ -15,7 +15,6 @@ namespace AuthServerWithJwt.Core.Services
         Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken);
 
         Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken);
-
-        Task<Response<ClientLoginDto>> CreateTokenByClient(ClientLoginDto clientTokenDto);
+        Response<ClientTokenDto> CreateTokenByClient(ClientLoginDto clientLoginDto);
     }
 }
