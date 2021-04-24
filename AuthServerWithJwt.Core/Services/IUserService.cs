@@ -11,7 +11,7 @@ namespace AuthServerWithJwt.Core.Services
     public interface IUserService
     {
 
-        Task<Response<UserAppDto>> CreateUserAsyn(UserAppDto userAppDto);
+        Task<Response<UserAppDto>> CreateUserAsyn(CreateUserDto userAppDto);
         Task<Response<UserAppDto>> GetUserByUsername(string username);
     }
 }
